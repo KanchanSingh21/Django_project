@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Registration Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            /* margin: 300px 300px; */
+            font-size: 17px;
+            padding: 8px;
+            background-color: floralwhite;
+        }
+
+        .container {
+            background-color: #f2f2f2;
+            padding: 5px 20px 15px 20px;
+            border: 1px solid lightgray;
+            border-radius: 4px;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        input[type="text"],
+        input[type="Date"],
+        input[type="Email"],
+        input[type="Address"],
+        input[type="Country"],
+        input[type="number"],
+        input[type="State"],
+        input[type="District"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #password,#confirm_password{
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4daca1;
+            color: white;
+            padding: 12px 20px;
+            border: 1px solid lightgray;
+            border-radius: 4px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <form action="" method="post" action="{%url 'login_info'%}">
+            {%csrf_token%} 
+            <h1>Students Registration Form</h1>
+            <hr>
+            <p>UserName:
+                <input type="text" name="username" placeholder="Enter name" id="username">
+            </p>
+            <p>Date of Birth:
+                <input type="date" name="mydate" placeholder="Enter Date of Birth" id="mydate">
+            </p>
+            <p>
+                Email:
+                <input type="email" name="myemail" placeholder="Enter Email" id="myemail">
+            </p>
+            
+            <p>Address:
+                <input type="text" name="my address" placeholder="Enter Address">
+            </p>
+            <p>Country:
+                <input type="text" name="country" placeholder="Enter Country Name">
+            </p>
+            <p>
+                State: <select name="statename">
+                    <option value="Uttar Pardesh">Uttar Pardesh</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value=" Punjab"> Punjab</option>
+                </select>
+            </p>
+           
+
+            <p>
+                Gender: Male <input type="radio" name="myGender"> FeMale <input type="radio" name="myGender"> Other
+                <input type="radio" name="myGender">
+            </p>
+            <p>Role:
+                <input type="text" name="role">
+            </p>
+            <p>Password:
+                <input type="password" id="password" name="password">
+            </p>
+            <p>Confirm_Password
+                <input type="password" id="confirm_password" name="confirm_password" onkeyup="check(this)">
+            </p>
+            <p>
+                <input type="submit" value="Submit now" id="submit" name="submit">
+            </p>
+        </form>
+    </div>
+</body>
+
+
+</html>
