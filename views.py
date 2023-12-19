@@ -12,15 +12,13 @@ def signup_info(request):
         username=request.POST['username']
         mydate=request.POST['mydate']
         myemail=request.POST['myemail']
-        myaddress=request.POST['myaddress']
-        country=request.POST['country']
-        statename=request.POST['statename']
+        fullAddress=request.POST['fullAddress']
         myGender=request.POST['myGender']
         role=request.POST['role']
         password=request.POST['password']
         confirm_password=request.POST['confirm_password']
 
-        user=signup_details.objects.create(username=username,mydate=mydate,myemail=myemail,myaddress=myaddress,country=country,statename=statename,myGender=myGender,role=role,password=password,confirm_password=confirm_password)
+        user=signup_details.objects.create(username=username,mydate=mydate,myemail=myemail,fullAddress=fullAddress,myGender=myGender,role=role,password=password,confirm_password=confirm_password)
         return HttpResponse("you have successfully inserted your details in database")
    
     
