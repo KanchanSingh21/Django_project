@@ -24,6 +24,15 @@ def signup_info(request):
     
 
 def login(request):
+    if request.method=="POST':
+        username=request.POST['email']
+        password=request.POST['password']
+        user=signup_details.object.get(email=username)
+        if user.password==password:
+            #return redirect("profile)
+            pass #remove pass when you will implement above line.
+        else:
+            return HttpResponse('Entered credential are not in record')
     return render(request,'login.html')
 
 def login_info(request):
